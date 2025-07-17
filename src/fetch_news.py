@@ -34,6 +34,7 @@ def fetch_news(query="stock market", from_date=None):
                 "description": article["description"],
                 "content": article["content"],
                 "source": article["source"]["name"],
+                "url": article["url"],
                 "published_at": article["publishedAt"],
                 "timestamp": datetime.now(timezone.utc).isoformat()
             })
