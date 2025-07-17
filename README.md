@@ -34,3 +34,74 @@ This project implements a basic data ingestion pipeline to collect, stream, and 
 
 ## 🗂️ Project Structure
 
+.
+├── docker-compose.yml
+├── .env
+├── src/
+│ ├── fetch_news.py # News fetcher (Producer)
+│ └── kafka_consumer.py # Kafka consumer & DB writer
+
+---
+
+## 🐳 Getting Started
+
+### 1. Clone the repo
+```
+git clone https://github.com/your-username/market-sentiment-analyzer.git
+cd market-sentiment-analyzer
+```
+
+### 2. Add your .env file
+```
+NEWS_API_KEY=your_api_key_here
+```
+
+### 3. Start the system
+```
+docker-compose up -d
+```
+
+### 4. Run the Kafka consumer
+```
+python src/kafka_consumer.py
+```
+
+### 5. Run the news fetcher
+```
+python src/fetch_news.py
+```
+
+---
+
+## 🛠️ Adminer Interface
+
+- Visit http://localhost:8080
+- Login with:
+    - **System**: PostgreSQL
+    - **Server**: postgre
+    - **Username**: postgres
+    - **Password**: postgres
+    - **Database**: newsdb
+
+---
+
+## 🧹 Resetting Kafka Topic
+```
+docker exec -it <kafka_container_name> bash
+kafka-topics --bootstrap-server localhost:9092 --delete --topic news_articles
+kafka-topics --bootstrap-server localhost:9092 --create --topic news_articles --partitions 1 --replication-factor 1
+```
+
+---
+
+## ✅ To Do / Next Steps
+
+- Add unit tests for producer and consumer
+- Integrate article sentiment analysis
+- Expose data as a REST API
+- Add Grafana dashboards for monitoring
+
+---
+
+## 🧠 Author Notes
+- This project is part of an AI/ML systems capstone for learning end-to-end data engineering workflows. Built with ❤️ using open-source tools.
