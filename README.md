@@ -33,13 +33,14 @@ This project implements a basic data ingestion pipeline to collect, stream, and 
 ---
 
 ## 🗂️ Project Structure
-
+```
 .
 ├── docker-compose.yml
 ├── .env
 ├── src/
 │ ├── fetch_news.py # News fetcher (Producer)
 │ └── kafka_consumer.py # Kafka consumer & DB writer
+```
 
 ---
 
