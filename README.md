@@ -105,4 +105,4 @@ kafka-topics --bootstrap-server localhost:9092 --create --topic news_articles --
 ---
 
 ## 🧠 Author Notes
-- This project is part of an AI/ML systems capstone for learning end-to-end data engineering workflows. Built with ❤️ using open-source tools.
+- This project is part of an AI/ML systems capstone for learning end-to-end data engineering workflows using open-source tools! Thank you for reading :)
